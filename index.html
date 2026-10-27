@@ -1,0 +1,486 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contactos en actuaria.com: qué medimos y cuánto llegó · Actuaria</title><meta name="robots" content="noindex">
+<link rel="icon" type="image/png" href="https://cdn.prod.website-files.com/6967c96e0fba2ea4f94d3c69/6a9883c0a48926ccd2c2e1f4_Light.png">
+<meta name="description" content="Los tres eventos de contacto de actuaria.com (formulario, WhatsApp y teléfono), del 2 al 25 de octubre de 2026: cómo se miden, cuánto llegó, de dónde y qué ajustar.">
+<meta property="og:type" content="article"><meta property="og:locale" content="es_EC">
+<meta property="og:title" content="Contactos en actuaria.com: qué medimos y cuánto llegó · Actuaria">
+<meta property="og:description" content="Del 2 al 25 de octubre: 72 clics en WhatsApp, 18 en teléfono y 13 formularios enviados. La medición cuadra con Webflow; hay tres ajustes pendientes.">
+<meta property="og:url" content="https://renatopuente-ux.github.io/actuaria-web-contactos/">
+<meta property="og:image" content="https://renatopuente-ux.github.io/actuaria-web-contactos/og-contactos.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Actuaria · Contactos en actuaria.com: 72 clics en WhatsApp, 18 clics en teléfono y 13 formularios enviados del 2 al 25 de octubre de 2026.">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Contactos en actuaria.com: qué medimos y cuánto llegó · Actuaria">
+<meta name="twitter:description" content="Del 2 al 25 de octubre: 72 clics en WhatsApp, 18 en teléfono y 13 formularios enviados. La medición cuadra con Webflow; hay tres ajustes pendientes.">
+<meta name="twitter:image" content="https://renatopuente-ux.github.io/actuaria-web-contactos/og-contactos.jpg">
+<meta name="color-scheme" content="light">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+<style>
+  /* Same look as «Estado de actuaria.com» (actuaria-web-estado): Lemon Milk Pro from the site's Webflow CDN for titles,
+     Nunito for subtitles and labels, Prompt for body text. */
+  @font-face { font-family: "Lemon Milk Pro"; src: url("https://cdn.prod.website-files.com/6967c96e0fba2ea4f94d3c69/6a8349e767be686373ed8862_Lemon%20Milk%20Pro%20Regular.otf") format("opentype"); font-weight: 400; font-display: swap; }
+  @font-face { font-family: "Lemon Milk Pro"; src: url("https://cdn.prod.website-files.com/6967c96e0fba2ea4f94d3c69/6a8349e6425dae8dfa2a027d_Lemon%20Milk%20Pro%20Bold.otf") format("opentype"); font-weight: 700; font-display: swap; }
+  :root {
+    --f-display: "Lemon Milk Pro", Tahoma, sans-serif; --f-sub: Nunito, system-ui, sans-serif; --f-body: Prompt, system-ui, sans-serif;
+    --navy: #151f47; --indigo: #4c64d9; --blue: #3061aa; --orange: #df5e2d; --orange-soft: #ffbba1;
+    --bg: #f3f6fc; --box: #e8ecf4; --page: #e6eaf2;
+    --ink: #151f47; --ink-2: rgba(21, 31, 71, .78); --ink-3: rgba(21, 31, 71, .58); --line: rgba(21, 31, 71, .1);
+    --ok: #1b5e20; --ok-bg: rgba(76, 175, 80, .14); --warn: #663c00; --warn-bg: rgba(255, 179, 0, .18);
+    --info: #2f5fcc; --info-bg: rgba(76, 100, 217, .12);
+    --neu: 10px 10px 26px rgba(15, 23, 42, .08), -10px -10px 24px rgba(255, 255, 255, .9);
+    --neu-sm: 4px 4px 10px rgba(15, 23, 42, .07), -4px -4px 10px rgba(255, 255, 255, .9);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--page); color: var(--ink); font: 400 15.5px/1.65 var(--f-body); -webkit-font-smoothing: antialiased; }
+  a { color: var(--blue); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { color: var(--indigo); }
+  code { font-family: ui-monospace, Consolas, monospace; font-size: .84em; background: rgba(21, 31, 71, .06); border-radius: 6px; padding: .1em .4em; overflow-wrap: anywhere; }
+  h1, h2, h3, h4 { margin: 0; color: var(--navy); line-height: 1.2; font-family: var(--f-sub); }
+  p { margin: 0 0 12px; }
+  ul, ol { margin: 0 0 12px; padding-left: 22px; }
+  li { margin-bottom: 6px; }
+  strong { font-weight: 600; }
+
+  .cover { position: relative; overflow: hidden; background: var(--bg); }
+  .cover_bg { position: absolute; inset: 0; background: url("https://cdn.prod.website-files.com/6967c96e0fba2ea4f94d3c69/6a831672361773e17ee3358b_background.png") center / 620px; opacity: .55; }
+  .cover_inner { position: relative; max-width: 1040px; margin: 0 auto; padding: 34px 24px 10px; }
+  .cover_top { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 52px; }
+  .cover_logo { height: 38px; width: auto; display: block; }
+  .cover_pill { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; background: var(--box); box-shadow: var(--neu-sm); font: 800 12px var(--f-sub); letter-spacing: .16em; text-transform: uppercase; color: var(--navy); }
+  .cover_pill i { color: var(--orange); }
+  .cover h1 { font: 700 clamp(32px, 5vw, 56px)/1.08 var(--f-display); letter-spacing: -.5px; max-width: 900px; margin: 0 0 18px; }
+  .cover h1 span { color: var(--orange); }
+  .cover_lead { font-size: 19px; color: var(--ink-2); max-width: 760px; margin: 0 0 34px; }
+  .cover_kpis { position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin: 0 0 34px; }
+  .cover_kpis .kpi { background: rgba(232, 236, 244, .92); }
+  .cover_meta { position: relative; background: var(--bg); border-top: 1px solid var(--line); padding: 26px 24px 24px; }
+  .cover_meta > * { max-width: 992px; margin-left: auto; margin-right: auto; }
+  .cover_grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px 28px; }
+  .cover_grid p { font: 400 16px/1.4 var(--f-body); color: var(--navy); margin: 6px 0 0; }
+  .ficha_label { display: block; font: 900 11px var(--f-sub); letter-spacing: .22em; text-transform: uppercase; color: var(--ink-3); }
+  .ficha_label i { color: var(--orange); margin-right: 8px; }
+
+  .layout { max-width: 1320px; margin: 0 auto; padding: 40px 24px 20px; display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 36px; align-items: start; }
+  .toc { position: sticky; top: 20px; max-height: calc(100vh - 40px); overflow: auto; padding: 18px 12px; background: var(--bg); border-radius: 18px; box-shadow: var(--neu-sm); }
+  .toc_title { font: 900 11px var(--f-sub); letter-spacing: .2em; text-transform: uppercase; color: var(--ink-3); margin: 0 8px 10px; }
+  .toc ol { list-style: none; margin: 0; padding: 0; counter-reset: toc; }
+  .toc li { margin: 0; counter-increment: toc; }
+  .toc a { display: flex; gap: 10px; align-items: baseline; padding: 6px 8px; border-radius: 10px; font: 700 13.5px var(--f-sub); color: var(--ink-2); text-decoration: none; }
+  .toc a::before { content: counter(toc, decimal-leading-zero); font-size: 11px; font-weight: 900; color: var(--ink-3); min-width: 18px; }
+  .toc a:hover { background: var(--box); color: var(--navy); }
+  .toc a.is-active { background: var(--navy); color: #fff; }
+  .toc a.is-active::before { color: var(--orange-soft); }
+  .toc a:focus-visible { outline: 2px solid var(--indigo); outline-offset: 2px; }
+  .toc_mobile { display: none; }
+  .sec { scroll-margin-top: 16px; background: var(--bg); border-radius: 22px; box-shadow: var(--neu); padding: 26px 46px 22px; margin-bottom: 30px; }
+  .sheet_head { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-bottom: 14px; margin-bottom: 30px; border-bottom: 1px solid var(--line); }
+  .sheet_head img { height: 22px; width: auto; display: block; }
+  .sheet_head span, .eyebrow { font: 900 11px var(--f-sub); letter-spacing: .22em; text-transform: uppercase; }
+  .sheet_head span { color: var(--ink-3); }
+  .sheet_foot { display: flex; justify-content: space-between; gap: 12px; margin-top: 36px; padding-top: 14px; border-top: 1px solid var(--line); font-size: 12.5px; color: var(--ink-3); }
+  .sheet_foot b { font: 900 13px var(--f-sub); color: var(--orange); }
+  .eyebrow { display: flex; align-items: center; gap: 14px; color: var(--orange); margin: 0 0 12px; }
+  .eyebrow::before { content: ""; width: 36px; height: 2px; background: var(--orange); }
+  .sec h2 { font: 700 32px/1.12 var(--f-display); letter-spacing: -.5px; margin: 0 0 16px; }
+  .sec_intro { font-size: 17.5px; line-height: 1.6; color: var(--ink-2); max-width: 820px; }
+  .sec h3 { font: 800 20px/1.25 var(--f-sub); margin: 32px 0 12px; }
+  .sec > p, .sec > ul { color: var(--ink-2); }
+
+  .kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin: 16px 0 8px; }
+  .kpi { position: relative; background: var(--box); border-radius: 16px; padding: 18px 18px 16px; box-shadow: var(--neu-sm); }
+  .kpi > i { position: absolute; top: 16px; right: 16px; color: rgba(223, 94, 45, .6); font-size: 16px; }
+  .kpi b { display: block; font: 700 32px/1.05 var(--f-display); color: var(--navy); }
+  .kpi span { display: block; margin-top: 6px; font-size: 13.5px; color: var(--ink-2); line-height: 1.4; }
+  .cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 14px 0 6px; }
+  .card { background: var(--box); border-radius: 16px; box-shadow: var(--neu-sm); padding: 18px 20px; min-width: 0; }
+  .card h4 { display: flex; gap: 10px; align-items: center; font: 800 15.5px var(--f-sub); margin-bottom: 8px; }
+  .card h4 i { color: var(--indigo); width: 18px; text-align: center; }
+  .card p { font-size: 14.5px; color: var(--ink-2); margin: 0; }
+  .veredicto { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 18px 0 8px; }
+  .veredicto .note { margin: 0; }
+  .note { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 12px; padding: 16px 18px; border-radius: 14px; margin: 16px 0; font-size: 14.5px; }
+  .note i { margin-top: 4px; }
+  .note p:last-child { margin-bottom: 0; }
+  .note strong { color: inherit; font-family: var(--f-sub); font-weight: 800; }
+  .note .note_t { display: block; font: 900 11px var(--f-sub); letter-spacing: .2em; text-transform: uppercase; margin-bottom: 4px; }
+  .note.is-info { background: var(--info-bg); color: #1d3a80; } .note.is-info i { color: var(--info); }
+  .note.is-warn { background: var(--warn-bg); color: var(--warn); }
+  .note.is-ok { background: var(--ok-bg); color: var(--ok); }
+  .rules { list-style: none; padding: 0; margin: 14px 0 0; display: grid; gap: 10px; }
+  .rules li { display: grid; grid-template-columns: 34px minmax(0, 1fr) auto; gap: 12px; align-items: start; margin: 0; padding: 13px 16px; background: var(--box); border-radius: 14px; box-shadow: var(--neu-sm); color: var(--ink-2); font-size: 14.5px; }
+  .rules b.n { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: var(--navy); color: #fff; font: 900 14px var(--f-sub); }
+  .rules strong { color: var(--navy); font-family: var(--f-sub); font-weight: 800; }
+  .rules p { margin: 6px 0 0; }
+  .tag { display: inline-block; padding: 2px 9px; border-radius: 999px; font: 800 12px var(--f-sub); white-space: nowrap; }
+  .tag.t-web { background: rgba(76, 100, 217, .12); color: #2f5fcc; }
+  .tag.t-mkt { background: rgba(223, 94, 45, .14); color: #8f3a17; }
+  .tag.t-app { background: rgba(21, 31, 71, .1); color: #151f47; }
+
+  .tabla { overflow-x: auto; margin: 12px 0 8px; border-radius: 14px; border: 1px solid var(--line); background: rgba(255, 255, 255, .45); }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; }
+  th, td { text-align: left; vertical-align: top; padding: 10px 14px; border-bottom: 1px solid var(--line); }
+  th { background: var(--navy); color: #fff; font: 900 11px var(--f-sub); letter-spacing: .14em; text-transform: uppercase; white-space: nowrap; }
+  td { color: var(--ink-2); }
+  td:first-child { color: var(--navy); font-weight: 600; }
+  tr:last-child td { border-bottom: 0; }
+  td.n, th.n { text-align: right; white-space: nowrap; }
+  tr.is-total td { font-weight: 600; color: var(--navy); background: rgba(21, 31, 71, .04); }
+  tr.is-hoy td { background: rgba(223, 94, 45, .07); }
+
+  .chart { background: var(--box); border-radius: 16px; box-shadow: var(--neu-sm); padding: 20px 22px; margin: 16px 0 8px; min-width: 0; }
+  .chart_title { display: flex; align-items: center; gap: 9px; font: 800 15px var(--f-sub); color: var(--navy); margin: 0 0 14px; }
+  .chart_title i { color: var(--indigo); }
+  .chart_note { font-size: 13px; color: var(--ink-3); margin: 12px 0 0; }
+  .chart_scroll { position: relative; }
+  .chart_hint { display: none; font-size: 12.5px; color: var(--ink-3); margin: 0 0 8px; }
+  .legend { list-style: none; padding: 0; margin: 12px 0 0; display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 13.5px; color: var(--ink-2); }
+  .legend li { display: flex; align-items: center; gap: 8px; margin: 0; }
+  .legend .sw { width: 12px; height: 12px; border-radius: 4px; background: var(--c); flex: none; }
+  .tip { position: absolute; z-index: 2; pointer-events: none; min-width: 170px; padding: 9px 12px; border-radius: 12px; background: var(--navy); color: #fff; font: 400 13px/1.45 var(--f-body); box-shadow: 0 10px 24px rgba(15, 23, 42, .22); opacity: 0; transform: translate(-50%, -100%); transition: opacity .12s; }
+  .tip.is-on { opacity: 1; }
+  .tip b { font: 800 13.5px var(--f-sub); display: block; }
+  .tip .sw { display: inline-block; width: 9px; height: 9px; border-radius: 3px; margin-right: 6px; }
+  .bars { display: grid; gap: 10px; }
+  .bar { display: grid; grid-template-columns: minmax(0, 260px) minmax(0, 1fr) 56px; gap: 12px; align-items: center; font-size: 14px; }
+  .bar_label { color: var(--ink-2); font-family: var(--f-sub); font-weight: 700; }
+  .bar_track { position: relative; height: 14px; border-radius: 999px; background: rgba(21, 31, 71, .08); }
+  .bar_fill { display: block; height: 100%; width: var(--w); border-radius: 999px; background: var(--c); }
+  .bar_value { font: 900 14px var(--f-sub); color: var(--navy); text-align: right; }
+
+  footer.pie { padding: 0 24px 48px; text-align: center; font-size: 13.5px; color: var(--ink-3); }
+
+  @media screen and (max-width: 1180px) {
+    .layout { grid-template-columns: minmax(0, 1fr); gap: 0; max-width: 1040px; }
+    .toc { display: none; }
+    .toc_mobile { display: block; margin-bottom: 22px; background: var(--bg); border-radius: 16px; box-shadow: var(--neu-sm); }
+    .toc_mobile summary { cursor: pointer; padding: 14px 18px; font: 800 15px var(--f-sub); color: var(--navy); list-style: none; display: flex; justify-content: space-between; align-items: center; }
+    .toc_mobile summary::-webkit-details-marker { display: none; }
+    .toc_mobile[open] summary i { transform: rotate(180deg); }
+    .toc_mobile ol { margin: 0; padding: 0 18px 14px 40px; }
+    .toc_mobile li { margin: 6px 0; }
+    .toc_mobile a { font: 700 14px var(--f-sub); text-decoration: none; color: var(--ink-2); }
+  }
+  @media screen and (max-width: 900px) {
+    .sec { padding: 22px 24px 18px; }
+    .kpis, .cover_kpis, .cover_grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .cards, .veredicto { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media screen and (max-width: 640px) {
+    .cover_inner { padding: 22px 16px 6px; }
+    .cover_top { flex-wrap: wrap; justify-content: flex-start; margin-bottom: 34px; }
+    .cover_pill { letter-spacing: .08em; border-radius: 18px; }
+    .cover_lead { font-size: 16.5px; }
+    .cover_meta { padding: 22px 16px; }
+    .cover_kpis, .kpis, .cover_grid { grid-template-columns: minmax(0, 1fr); }
+    .layout { padding: 24px 12px 10px; }
+    .sec { padding: 18px 16px 16px; border-radius: 18px; }
+    .sec h2 { font-size: 24px; }
+    .sheet_head span { display: none; }
+    .kpi b { font-size: 28px; }
+    .chart { padding: 16px; }
+    .chart_scroll { overflow-x: auto; }
+    .chart_scroll svg { display: block; width: 700px; max-width: none; }
+    .chart_hint { display: block; }
+    .bar { grid-template-columns: minmax(0, 1fr) 52px; gap: 4px 10px; }
+    .bar_label { grid-column: 1 / -1; }
+    .rules li { grid-template-columns: 34px minmax(0, 1fr); }
+    .rules li .tag { grid-column: 2; justify-self: start; }
+    th, td { padding: 9px 11px; }
+    td:first-child { min-width: 150px; }
+    .tabla.is-apilada thead { display: none; }
+    .tabla.is-apilada table, .tabla.is-apilada tbody, .tabla.is-apilada tr, .tabla.is-apilada td { display: block; width: auto; min-width: 0; }
+    .tabla.is-apilada tr { padding: 6px 0; border-top: 1px solid rgba(21, 31, 71, .08); }
+    .tabla.is-apilada tr:first-child { border-top: 0; }
+    .tabla.is-apilada td { border: 0; padding: 4px 12px; }
+    .tabla.is-apilada td[data-label]::before { content: attr(data-label); display: block; font: 800 11px var(--f-sub); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
+    /* Stacked numbers read as «label … value» on one line. */
+    .tabla.is-apilada td.n { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+    .tabla.is-apilada td.n::before { display: inline; }
+  }
+  @media print {
+    body { background: #fff; font-size: 12.5px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .sheet_head, .sheet_foot, .tip, footer.pie, .toc, .toc_mobile { display: none !important; }
+    .layout { display: block; max-width: none; padding: 0; }
+    .sec { break-before: page; background: transparent; box-shadow: none; border-radius: 0; padding: 0; margin: 0; }
+    .card, .kpi, .chart, .rules li { box-shadow: none; border: 1px solid rgba(21, 31, 71, .1); }
+    .card, .kpi, .chart, .rules li, tr, .note { break-inside: avoid; }
+  }
+</style></head>
+<body>
+<header class="cover">
+  <div class="cover_bg"></div>
+  <div class="cover_inner">
+    <div class="cover_top"><img class="cover_logo" src="https://cdn.prod.website-files.com/6967c96e0fba2ea4f94d3c69/6a70bbec17f7fc765c2ea5d9_logo-actuaria.svg" alt="Actuaria"><span class="cover_pill"><i class="fa-solid fa-chart-simple" aria-hidden="true"></i>Área de Producto · 27 de octubre de 2026</span></div>
+    <h1>Contactos en actuaria.com: <span>qué medimos y cuánto llegó</span></h1>
+    <p class="cover_lead">Del 2 al 25 de octubre la web registró 72 clics en WhatsApp, 18 en teléfono y 13 formularios enviados. La medición funciona y cuadra con los envíos que guarda Webflow. Para que siga siendo confiable hay tres ajustes.</p>
+    <div class="cover_kpis">
+      <div class="kpi"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i><b>72</b><span>clics en WhatsApp, de 64 personas: 3,0 por día</span></div>
+      <div class="kpi"><i class="fa-solid fa-phone" aria-hidden="true"></i><b>18</b><span>clics en teléfono, de 14 personas</span></div>
+      <div class="kpi"><i class="fa-solid fa-envelope-open-text" aria-hidden="true"></i><b>13</b><span>formularios enviados, según Webflow; GA4 midió 12</span></div>
+      <div class="kpi"><i class="fa-solid fa-bullhorn" aria-hidden="true"></i><b>56 %</b><span>de los clics en WhatsApp llegaron desde la pauta (Google Ads y Facebook)</span></div>
+    </div>
+  </div>
+  <div class="cover_meta">
+    <div class="cover_grid">
+      <div><span class="ficha_label"><i class="fa-solid fa-users" aria-hidden="true"></i>Para</span><p>Dirección, Marketing, PMV y el equipo web</p></div>
+      <div><span class="ficha_label"><i class="fa-solid fa-pen-nib" aria-hidden="true"></i>Preparado por</span><p>Área de Producto · equipo web de actuaria.com</p></div>
+      <div><span class="ficha_label"><i class="fa-solid fa-database" aria-hidden="true"></i>Fuentes</span><p>GA4 de Actuaria, envíos de Webflow, Tag Manager y el sitio publicado</p></div>
+      <div><span class="ficha_label"><i class="fa-solid fa-calendar" aria-hidden="true"></i>Periodo</span><p>2 al 25 de octubre de 2026</p></div>
+    </div>
+  </div>
+</header>
+<div class="layout">
+<nav class="toc" aria-label="Contenido">
+  <p class="toc_title">Contenido</p>
+  <ol id="toc-list">
+    <li><a href="#respuesta">Respuesta corta</a></li>
+    <li><a href="#eventos">Qué mide cada evento</a></li>
+    <li><a href="#cifras">Cuánto llegó</a></li>
+    <li><a href="#origen">De dónde llegan</a></li>
+    <li><a href="#formularios">Formularios y Webflow</a></li>
+    <li><a href="#riesgos">Riesgos de la medición</a></li>
+    <li><a href="#pasos">Próximos pasos</a></li>
+    <li><a href="#fuentes">Fuentes y método</a></li>
+  </ol>
+</nav>
+<main>
+<details class="toc_mobile">
+  <summary>Contenido <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></summary>
+  <ol id="toc-mobile-list"></ol>
+</details>
+
+<section class="sec" id="respuesta">
+  <div class="sheet_head"><img src="https://cdn.prod.website-files.com/6967c96e0fba2ea4f94d3c69/6a70bbec17f7fc765c2ea5d9_logo-actuaria.svg" alt="Actuaria" width="120" height="25"><span>Contactos en actuaria.com · 27 de octubre de 2026</span></div>
+  <p class="eyebrow">01 · Respuesta corta</p><h2>La medición funciona; hay tres ajustes</h2>
+  <p class="sec_intro">Los tres eventos de contacto están bien configurados y llegan al GA4 de Actuaria, al GA4 que usa la agencia y a Google Ads. Los formularios cuadran con los envíos que guarda Webflow, y todos los botones de WhatsApp y de teléfono del sitio cumplen las reglas de medición.</p>
+  <div class="veredicto">
+    <div class="note is-ok"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><div><span class="note_t">Funciona</span><p><strong>GA4 midió 12 de los 13 formularios enviados</strong>, a la misma hora en que llegaron a Webflow. Uno no llegó a GA4, probablemente porque el visitante bloqueaba la medición. Los 72 clics en WhatsApp fueron al número de Actuaria y los 18 de teléfono, a la central de Quito.</p></div></div>
+    <div class="note is-warn"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i><div><span class="note_t">Ajustar</span><p><strong>Tres cosas pueden inflar o esconder contactos:</strong> el botón «Compartir en WhatsApp» de los artículos cuenta como contacto, una dirección vieja de agradecimiento cuenta como formulario, y el GA4 que usa la agencia no marca estos eventos como conversiones (sección 06).</p></div></div>
+  </div>
+  <div class="cards">
+    <div class="card"><h4><i class="fa-brands fa-whatsapp" aria-hidden="true"></i>WhatsApp es el canal principal</h4><p>70 % de las 103 acciones de contacto del periodo fueron clics en WhatsApp, 17 % en teléfono y 13 % formularios.</p></div>
+    <div class="card"><h4><i class="fa-solid fa-bullhorn" aria-hidden="true"></i>La pauta trae la mayoría</h4><p>Google Ads y los anuncios de Facebook generan el 56 % de los clics en WhatsApp, el 61 % de los de teléfono y 10 de las 14 llegadas a la página de agradecimiento.</p></div>
+    <div class="card"><h4><i class="fa-solid fa-laptop" aria-hidden="true"></i>El formulario se llena en computadora</h4><p>13 de las 14 llegadas a la página de agradecimiento fueron desde computadora. En cambio, el 54 % de los clics en WhatsApp y el 67 % de los de teléfono son desde el celular.</p></div>
+  </div>
+  <div class="note is-info"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><p><strong>Cómo leer estas cifras.</strong> Son acciones, no personas: una misma persona puede escribir por WhatsApp y además llamar, y un clic en el teléfono desde una computadora cuenta aunque no se haga la llamada. «Personas» son usuarios de GA4, es decir, navegadores distintos. Las cifras de GA4 ya descuentan un evento de prueba de cada tipo que se envió el 2 de octubre. Desde el 21 de octubre GA4 excluye el tráfico de la oficina; antes, algún clic del equipo puede estar incluido.</p></div>
+  <div class="sheet_foot"><span>Área de Producto · Actuaria Consultores</span><span><b>01</b> / 08</span></div>
+</section>
+
+<section class="sec" id="eventos">
+  <div class="sheet_head"><img src="https://cdn.prod.website-files.com/6967c96e0fba2ea4f94d3c69/6a70bbec17f7fc765c2ea5d9_logo-actuaria.svg" alt="Actuaria" width="120" height="25"><span>Contactos en actuaria.com · 27 de octubre de 2026</span></div>
+  <p class="eyebrow">02 · Qué mide cada evento</p><h2>Tres eventos, tres destinos</h2>
+  <p class="sec_intro">Los eventos los dispara el contenedor de Google Tag Manager GTM-WVB8ND3W, en su versión 3, la misma que se publicó el 2 de octubre. Cada evento va a tres lugares: el GA4 de Actuaria, el GA4 heredado que usa la agencia (G-0KW3C82GY3) y una conversión de Google Ads.</p>
+  <div class="tabla is-apilada"><table><thead><tr><th>Evento</th><th>Se cuenta cuando…</th><th>Va a</th><th>Evento clave</th></tr></thead><tbody>
+    <tr><td><strong>Formulario</strong><br><code>generate_lead</code></td><td data-label="Se cuenta cuando…">Carga la página de agradecimiento <code>/gracias</code>, adonde lleva el formulario de contacto después de enviarlo. Cuenta cada carga de esa página.</td><td data-label="Va a">Los dos GA4 y la conversión de formulario de Google Ads</td><td data-label="Evento clave">Sí en el GA4 de Actuaria; no en el de la agencia</td></tr>
+    <tr><td><strong>WhatsApp</strong><br><code>click_whatsapp</code></td><td data-label="Se cuenta cuando…">Alguien hace clic en un enlace cuya dirección contiene wa.me, api.whatsapp.com, web.whatsapp.com o wa.link.</td><td data-label="Va a">Los dos GA4, con la dirección del enlace, y la conversión de WhatsApp de Google Ads</td><td data-label="Evento clave">Sí en el GA4 de Actuaria; no en el de la agencia</td></tr>
+    <tr><td><strong>Teléfono</strong><br><code>click_phone</code></td><td data-label="Se cuenta cuando…">Alguien hace clic en un enlace que empieza por <code>tel:</code>.</td><td data-label="Va a">Los dos GA4, con el número, y la conversión de llamada de Google Ads</td><td data-label="Evento clave">Sí en el GA4 de Actuaria; no en el de la agencia</td></tr>
+  </tbody></table></div>
+  <p class="chart_note">Google Ads solo registra la conversión cuando la visita vino de un anuncio. Los eventos clave son las conversiones de GA4; en el GA4 de Actuaria están marcados desde el 20 de octubre.</p>
+  <h3>Dónde están los contactos en el sitio</h3>
+  <div class="cards">
+    <div class="card"><h4><i class="fa-brands fa-whatsapp" aria-hidden="true"></i>WhatsApp · +593 97 913 3351</h4><p>En el pie de las 620 páginas, en el botón flotante (pantallas desde 992 px) y en la barra de contacto del celular (hasta 479 px), más un enlace propio en <a href="https://actuaria.com/contacto" target="_blank" rel="noopener">Contacto</a>.</p></div>
+    <div class="card"><h4><i class="fa-solid fa-phone" aria-hidden="true"></i>Teléfono · +593 2 392 3400</h4><p>La central de Quito, en el pie y en la barra del celular de todas las páginas, y en <a href="https://actuaria.com/contacto" target="_blank" rel="noopener">Contacto</a>. Contacto también tiene el número de Guayaquil, que es el mismo móvil del WhatsApp.</p></div>
+    <div class="card"><h4><i class="fa-solid fa-envelope-open-text" aria-hidden="true"></i>Formulario de contacto</h4><p>En 572 páginas: en cada idioma, el inicio, las 5 soluciones, el blog, Contacto y los 278 artículos. En español y en inglés lleva a la misma página de agradecimiento. Los formularios de postulaciones y de Registro Actuacont no cuentan como contacto.</p></div>
+  </div>
+  <div class="sheet_foot"><span>Área de Producto · Actuaria Consultores</span><span><b>02</b> / 08</span></div>
+</section>
+
+<section class="sec" id="cifras">
+  <div class="sheet_head"><img src="https://cdn.prod.website-files.com/6967c96e0fba2ea4f94d3c69/6a70bbec17f7fc765c2ea5d9_logo-actuaria.svg" alt="Actuaria" width="120" height="25"><span>Contactos en actuaria.com · 27 de octubre de 2026</span></div>
+  <p class="eyebrow">03 · Cuánto llegó</p><h2>103 acciones de contacto en 24 días</h2>
+  <p class="sec_intro">Del 2 al 25 de octubre hubo 72 clics en WhatsApp, 18 en teléfono y 13 formularios enviados: 4,3 acciones de contacto por día.</p>
+  <div class="tabla is-apilada"><table><thead><tr><th>Evento</th><th class="n">En GA4</th><th class="n">Prueba del 2 oct</th><th class="n">Reales</th><th class="n">Personas</th><th class="n">Por día</th></tr></thead><tbody>
+    <tr><td>Clics en WhatsApp</td><td class="n" data-label="En GA4">73</td><td class="n" data-label="Prueba del 2 oct">1</td><td class="n" data-label="Reales"><strong>72</strong></td><td class="n" data-label="Personas">64</td><td class="n" data-label="Por día">3,0</td></tr>
+    <tr><td>Clics en teléfono</td><td class="n" data-label="En GA4">19</td><td class="n" data-label="Prueba del 2 oct">1</td><td class="n" data-label="Reales"><strong>18</strong></td><td class="n" data-label="Personas">14</td><td class="n" data-label="Por día">0,75</td></tr>
+    <tr><td>Llegadas a la página de agradecimiento</td><td class="n" data-label="En GA4">15</td><td class="n" data-label="Prueba del 2 oct">1</td><td class="n" data-label="Reales">14</td><td class="n" data-label="Personas">13</td><td class="n" data-label="Por día">0,58</td></tr>
+    <tr class="is-total"><td>Formularios enviados (Webflow)</td><td class="n" data-label="En GA4">—</td><td class="n" data-label="Prueba del 2 oct">—</td><td class="n" data-label="Reales"><strong>13</strong></td><td class="n" data-label="Personas">13</td><td class="n" data-label="Por día">0,54</td></tr>
+  </tbody></table></div>
+  <p class="chart_note">Formularios enviados: los que guarda Webflow, sin pruebas internas. De las 14 llegadas reales a la página de agradecimiento que cuenta GA4, 12 son envíos y 2 son visitas sin envío; un envío no llegó a GA4 (sección 05).</p>
+  <div class="chart" data-serie='[["vie 2 oct",0,0,0,0],["sáb 3 oct",0,0,0,0],["dom 4 oct",0,0,0,0],["lun 5 oct",4,2,2,0],["mar 6 oct",8,5,1,2],["mié 7 oct",18,15,1,2],["jue 8 oct",5,4,0,1],["vie 9 oct",1,0,1,0],["sáb 10 oct",1,1,0,0],["dom 11 oct",1,1,0,0],["lun 12 oct",5,4,1,0],["mar 13 oct",6,3,1,2],["mié 14 oct",11,8,2,1],["jue 15 oct",1,1,0,0],["vie 16 oct",2,2,0,0],["sáb 17 oct",0,0,0,0],["dom 18 oct",0,0,0,0],["lun 19 oct",4,3,0,1],["mar 20 oct",7,6,1,0],["mié 21 oct",13,5,5,3],["jue 22 oct",8,7,1,0],["vie 23 oct",5,4,0,1],["sáb 24 oct",3,1,2,0],["dom 25 oct",0,0,0,0]]'>
+    <p class="chart_title"><i class="fa-solid fa-chart-column" aria-hidden="true"></i>Acciones de contacto por día, del 2 al 25 de octubre</p>
+    <p class="chart_hint"><i class="fa-solid fa-arrows-left-right" aria-hidden="true"></i> Desliza para ver todo el periodo.</p>
+    <div class="chart_scroll"><svg viewBox="0 0 960 250" width="100%" role="img" aria-label="Acciones de contacto por día, del 2 al 25 de octubre: clics en WhatsApp, clics en teléfono y formularios enviados. El máximo es el 7 de octubre, con 15 clics en WhatsApp."><line x1="34" x2="950" y1="216" y2="216" stroke="rgba(21,31,71,.1)"/><text x="26" y="220" text-anchor="end" style="font-family: Nunito, system-ui, sans-serif; font-weight: 700; font-size: 11px; fill: rgba(21,31,71,.58)">0</text><line x1="34" x2="950" y1="165" y2="165" stroke="rgba(21,31,71,.1)"/><text x="26" y="169" text-anchor="end" style="font-family: Nunito, system-ui, sans-serif; font-weight: 700; font-size: 11px; fill: rgba(21,31,71,.58)">5</text><line x1="34" x2="950" y1="114" y2="114" stroke="rgba(21,31,71,.1)"/><text x="26" y="118" text-anchor="end" style="font-family: Nunito, system-ui, sans-serif; font-weight: 700; font-size: 11px; fill: rgba(21,31,71,.58)">10</text><line x1="34" x2="950" y1="63" y2="63" stroke="rgba(21,31,71,.1)"/><text x="26" y="67" text-anchor="end" style="font-family: Nunito, system-ui, sans-serif; font-weight: 700; font-size: 11px; fill: rgba(21,31,71,.58)">15</text><line x1="34" x2="950" y1="12" y2="12" stroke="rgba(21,31,71,.1)"/><text x="26" y="16" text-anchor="end" style="font-family: Nunito, system-ui, sans-serif; font-weight: 700; font-size: 11px; fill: rgba(21,31,71,.58)">20</text><rect class="marca" x="0" y="0" width="0" height="0" fill="rgba(21,31,71,.06)"/><text x="53.1" y="232" text-anchor="middle" style="font-family: Nunito, system-ui, sans-serif; font-weight: 700; font-size: 11px; fill: rgba(21,31,71,.58)">2</text><rect data-i="0" x="34.0" y="12" width="38.2" height="204" fill="transparent"/><rect data-i="1" x="72.2" y="12" width="38.2" height="204" fill="transparent"/><rect data-i="2" x="110.3" y="12" width="38.2" height="204" fill="transparent"/><rect x="155.4" y="195.6" width="24.4" height="19.4" rx="2" fill="#4c64d9"/><rect x="155.4" y="175.2" width="24.4" height="19.4" rx="2" fill="#151f47"/><text x="167.6" y="232" text-anchor="middle" style="font-family: Nunito, system-ui, sans-serif; font-weight: 700; font-size: 11px; fill: rgba(21,31,71,.58)">5</text><rect data-i="3" x="148.5" y="12" width="38.2" height="204" fill="transparent"/><rect x="193.5" y="165.0" width="24.4" height="50.0" rx="2" fill="#4c64d9"/><rect x="193.5" y="154.8" width="24.4" height="9.2" rx="2" fill="#151f47"/><rect x="193.5" y="134.4" width="24.4" height="19.4" rx="2" fill="#df5e2d"/><rect data-i="4" x="186.7" y="12" width="38.2" height="204" fill="transparent"/><rect x="231.7" y="63.0" width="24.4" height="152.0" rx="2" fill="#4c64d9"/><rect x="231.7" y="52.8" width="24.4" height="9.2" rx="2" fill="#151f47"/><rect x="231.7" y="32.4" width="24.4" height="19.4" rx="2" fill="#df5e2d"/><rect data-i="5" x="224.8" y="12" width="38.2" height="204" fill="transparent"/><rect x="269.9" y="175.2" width="24.4" height="39.8" rx="2" fill="#4c64d9"/><rect x="269.9" y="165.0" width="24.4" height="9.2" rx="2" fill="#df5e2d"/><rect data-i="6" x="263.0" y="12" width="38.2" height="204" fill="transparent"/><rect x="308.0" y="205.8" width="24.4" height="9.2" rx="2" fill="#151f47"/><rect data-i="7" x="301.2" y="12" width="38.2" height="204" fill="transparent"/><rect x="346.2" y="205.8" width="24.4" height="9.2" rx="2" fill="#4c64d9"/><rect data-i="8" x="339.3" y="12" width="38.2" height="204" fill="transparent"/><rect x="384.4" y="205.8" width="24.4" height="9.2" rx="2" fill="#4c64d9"/><rect data-i="9" x="377.5" y="12" width="38.2" height="204" fill="transparent"/><rect x="422.5" y="175.2" width="24.4" height="39.8" rx="2" fill="#4c64d9"/><rect x="422.5" y="165.0" width="24.4" height="9.2" rx="2" fill="#151f47"/><text x="434.7" y="232" text-anchor="middle" style="font-family: Nunito, system-ui, sans-serif; font-weight: 700; font-size: 11px; fill: rgba(21,31,71,.58)">12</text><rect data-i="10" x="415.7" y="12" width="38.2" height="204" fill="transparent"/><rect x="460.7" y="185.4" width="24.4" height="29.6" rx="2" fill="#4c64d9"/><rect x="460.7" y="175.2" width="24.4" height="9.2" rx="2" fill="#151f47"/><rect x="460.7" y="154.8" width="24.4" height="19.4" rx="2" fill="#df5e2d"/><rect data-i="11" x="453.8" y="12" width="38.2" height="204" fill="transparent"/><rect x="498.9" y="134.4" width="24.4" height="80.6" rx="2" fill="#4c64d9"/><rect x="498.9" y="114.0" width="24.4" height="19.4" rx="2" fill="#151f47"/><rect x="498.9" y="103.8" width="24.4" height="9.2" rx="2" fill="#df5e2d"/><rect data-i="12" x="492.0" y="12" width="38.2" height="204" fill="transparent"/><rect x="537.0" y="205.8" width="24.4" height="9.2" rx="2" fill="#4c64d9"/><rect data-i="13" x="530.2" y="12" width="38.2" height="204" fill="transparent"/><rect x="575.2" y="195.6" width="24.4" height="19.4" rx="2" fill="#4c64d9"/><rect data-i="14" x="568.3" y="12" width="38.2" height="204" fill="transparent"/><rect data-i="15" x="606.5" y="12" width="38.2" height="204" fill="transparent"/><rect data-i="16" x="644.7" y="12" width="38.2" height="204" fill="transparent"/><rect x="689.7" y="185.4" width="24.4" height="29.6" rx="2" fill="#4c64d9"/><rect x="689.7" y="175.2" width="24.4" height="9.2" rx="2" fill="#df5e2d"/><text x="701.9" y="232" text-anchor="middle" style="font-family: Nunito, system-ui, sans-serif; font-weight: 700; font-size: 11px; fill: rgba(21,31,71,.58)">19</text><rect data-i="17" x="682.8" y="12" width="38.2" height="204" fill="transparent"/><rect x="727.9" y="154.8" width="24.4" height="60.2" rx="2" fill="#4c64d9"/><rect x="727.9" y="144.6" width="24.4" height="9.2" rx="2" fill="#151f47"/><rect data-i="18" x="721.0" y="12" width="38.2" height="204" fill="transparent"/><rect x="766.0" y="165.0" width="24.4" height="50.0" rx="2" fill="#4c64d9"/><rect x="766.0" y="114.0" width="24.4" height="50.0" rx="2" fill="#151f47"/><rect x="766.0" y="83.4" width="24.4" height="29.6" rx="2" fill="#df5e2d"/><rect data-i="19" x="759.2" y="12" width="38.2" height="204" fill="transparent"/><rect x="804.2" y="144.6" width="24.4" height="70.4" rx="2" fill="#4c64d9"/><rect x="804.2" y="134.4" width="24.4" height="9.2" rx="2" fill="#151f47"/><rect data-i="20" x="797.3" y="12" width="38.2" height="204" fill="transparent"/><rect x="842.4" y="175.2" width="24.4" height="39.8" rx="2" fill="#4c64d9"/><rect x="842.4" y="165.0" width="24.4" height="9.2" rx="2" fill="#df5e2d"/><rect data-i="21" x="835.5" y="12" width="38.2" height="204" fill="transparent"/><rect x="880.5" y="205.8" width="24.4" height="9.2" rx="2" fill="#4c64d9"/><rect x="880.5" y="185.4" width="24.4" height="19.4" rx="2" fill="#151f47"/><rect data-i="22" x="873.7" y="12" width="38.2" height="204" fill="transparent"/><rect data-i="23" x="911.8" y="12" width="38.2" height="204" fill="transparent"/><text x="34" y="246" style="font-family: Nunito, system-ui, sans-serif; font-weight: 700; font-size: 11px; fill: rgba(21,31,71,.58)">Octubre de 2026 · los números marcan el primer día y cada lunes</text></svg><div class="tip" role="status"></div></div>
+    <ul class="legend"><li><span class="sw" style="--c: #4c64d9"></span>Clics en WhatsApp</li><li><span class="sw" style="--c: #151f47"></span>Clics en teléfono</li><li><span class="sw" style="--c: #df5e2d"></span>Formularios enviados</li></ul>
+  </div>
+  <h3>Por semana</h3>
+  <div class="tabla is-apilada"><table><thead><tr><th>Tramo</th><th class="n">WhatsApp</th><th class="n">Teléfono</th><th class="n">Formularios</th><th class="n">Total</th><th class="n">Por día</th></tr></thead><tbody>
+    <tr><td>2 al 8 oct <span style="color: var(--ink-3); font-weight: 400">(7 días)</span></td><td class="n" data-label="WhatsApp">26</td><td class="n" data-label="Teléfono">4</td><td class="n" data-label="Formularios">5</td><td class="n" data-label="Total">35</td><td class="n" data-label="Por día">5,0</td></tr>
+    <tr><td>9 al 18 oct <span style="color: var(--ink-3); font-weight: 400">(10 días)</span></td><td class="n" data-label="WhatsApp">20</td><td class="n" data-label="Teléfono">5</td><td class="n" data-label="Formularios">3</td><td class="n" data-label="Total">28</td><td class="n" data-label="Por día">2,8</td></tr>
+    <tr><td>19 al 25 oct <span style="color: var(--ink-3); font-weight: 400">(7 días)</span></td><td class="n" data-label="WhatsApp">26</td><td class="n" data-label="Teléfono">9</td><td class="n" data-label="Formularios">5</td><td class="n" data-label="Total">40</td><td class="n" data-label="Por día">5,7</td></tr>
+    <tr class="is-total"><td>Total (24 días)</td><td class="n" data-label="WhatsApp">72</td><td class="n" data-label="Teléfono">18</td><td class="n" data-label="Formularios">13</td><td class="n" data-label="Total">103</td><td class="n" data-label="Por día">4,3</td></tr>
+  </tbody></table></div>
+  <h3>Dos días que destacan</h3>
+  <ul>
+    <li><strong>7 de octubre:</strong> 15 clics en WhatsApp, el máximo del periodo, 10 de ellos en el inicio. Por canal: 6 directos, 5 desde Google Ads, 2 desde Google orgánico y 2 de otros canales. Conviene cruzarlo con los correos y publicaciones de ese día: un correo sin etiquetas de campaña entra como «directo».</li>
+    <li><strong>21 de octubre:</strong> 5 clics en teléfono de 2 personas, todos desde anuncios de Facebook; una de ellas hizo clic 4 veces.</li>
+  </ul>
+  <div class="sheet_foot"><span>Área de Producto · Actuaria Consultores</span><span><b>03</b> / 08</span></div>
+</section>
+
+<section class="sec" id="origen">
+  <div class="sheet_head"><img src="https://cdn.prod.website-files.com/6967c96e0fba2ea4f94d3c69/6a70bbec17f7fc765c2ea5d9_logo-actuaria.svg" alt="Actuaria" width="120" height="25"><span>Contactos en actuaria.com · 27 de octubre de 2026</span></div>
+  <p class="eyebrow">04 · De dónde llegan</p><h2>El inicio, Contacto y dos artículos con pauta</h2>
+  <p class="sec_intro">Página donde ocurrió cada contacto. En formularios es la página desde la que se envió.</p>
+  <div class="tabla"><table><thead><tr><th>Página</th><th class="n">WhatsApp</th><th class="n">Teléfono</th><th class="n">Formularios</th></tr></thead><tbody>
+    <tr><td><a href="https://actuaria.com/" target="_blank" rel="noopener">Inicio</a></td><td class="n">27</td><td class="n">4</td><td class="n">8</td></tr>
+    <tr><td><a href="https://actuaria.com/contacto" target="_blank" rel="noopener">Contacto</a></td><td class="n">21</td><td class="n">5</td><td class="n">3</td></tr>
+    <tr><td><a href="https://actuaria.com/post/inflacion-y-provision-de-jubilacion-patronal-esta-preparada-su-empresa-para-el-futuro" target="_blank" rel="noopener">Artículo «Inflación y provisión de jubilación patronal»</a></td><td class="n">11</td><td class="n">7</td><td class="n">0</td></tr>
+    <tr><td><a href="https://actuaria.com/12-calculadoras-especializadas" target="_blank" rel="noopener">12 calculadoras especializadas</a></td><td class="n">4</td><td class="n">0</td><td class="n">0</td></tr>
+    <tr><td><a href="https://actuaria.com/post/people-analytics-en-recursos-humanos-una-mirada-mas-profunda-a-la-gestion-del-talento" target="_blank" rel="noopener">Artículo «People analytics en recursos humanos»</a></td><td class="n">3</td><td class="n">1</td><td class="n">0</td></tr>
+    <tr><td><a href="https://actuaria.com/estudio-actuarial-jubilacion-patronal" target="_blank" rel="noopener">Estudio Actuarial de Jubilación Patronal</a></td><td class="n">1</td><td class="n">0</td><td class="n">1</td></tr>
+    <tr><td><a href="https://actuaria.com/beneficios-laborales" target="_blank" rel="noopener">Beneficios Laborales</a></td><td class="n">1</td><td class="n">0</td><td class="n">1</td></tr>
+    <tr><td>Otras páginas</td><td class="n">4</td><td class="n">1</td><td class="n">0</td></tr>
+    <tr class="is-total"><td>Total</td><td class="n">72</td><td class="n">18</td><td class="n">13</td></tr>
+  </tbody></table></div>
+  <p class="chart_note">En teléfono, «otras páginas» es una página de error de una imagen vieja de WordPress (por su nombre, de un correo antiguo). Ningún formulario salió de los artículos del blog ni de las páginas en inglés, aunque todos tienen el formulario.</p>
+  <h3>Por botón</h3>
+  <p>En WhatsApp, 56 clics fueron en los botones que tiene todo el sitio (pie, botón flotante y barra del celular) y 16 en el enlace propio de <a href="https://actuaria.com/contacto" target="_blank" rel="noopener">Contacto</a>. En teléfono, los 18 clics fueron al número de la central de Quito; el de Guayaquil no tuvo clics.</p>
+  <h3>Por canal de la visita</h3>
+  <div class="tabla"><table><thead><tr><th>Canal</th><th class="n">WhatsApp</th><th class="n">Teléfono</th><th class="n">Página de agradecimiento</th></tr></thead><tbody>
+    <tr><td>Google Ads</td><td class="n">29</td><td class="n">4</td><td class="n">10</td></tr>
+    <tr><td>Facebook e Instagram Ads</td><td class="n">11</td><td class="n">7</td><td class="n">0</td></tr>
+    <tr><td>Directo</td><td class="n">16</td><td class="n">6</td><td class="n">1</td></tr>
+    <tr><td>Google orgánico</td><td class="n">10</td><td class="n">0</td><td class="n">2</td></tr>
+    <tr><td>Correo (Brevo)</td><td class="n">3</td><td class="n">0</td><td class="n">0</td></tr>
+    <tr><td>Facebook sin pago</td><td class="n">3</td><td class="n">1</td><td class="n">0</td></tr>
+    <tr><td>Otro sitio</td><td class="n">0</td><td class="n">0</td><td class="n">1</td></tr>
+    <tr class="is-total"><td>Total</td><td class="n">72</td><td class="n">18</td><td class="n">14</td></tr>
+  </tbody></table></div>
+  <p class="chart_note">Canal según la fuente y el medio de la visita en GA4. La página de agradecimiento suma los 12 formularios que midió GA4 y 2 visitas sin envío.</p>
+  <p style="margin-top: 16px">Las visitas que llegan desde Facebook entran por dos artículos del blog, <a href="https://actuaria.com/post/inflacion-y-provision-de-jubilacion-patronal-esta-preparada-su-empresa-para-el-futuro" target="_blank" rel="noopener">«Inflación y provisión de jubilación patronal»</a> y <a href="https://actuaria.com/post/people-analytics-en-recursos-humanos-una-mirada-mas-profunda-a-la-gestion-del-talento" target="_blank" rel="noopener">«People analytics en recursos humanos»</a>, y ahí ocurren sus clics en WhatsApp y teléfono. Google Ads, en cambio, lleva sobre todo al inicio, y desde ahí sale la mayoría de los formularios.</p>
+  <h3>Dispositivo y hora</h3>
+  <div class="kpis">
+    <div class="kpi"><i class="fa-solid fa-mobile-screen" aria-hidden="true"></i><b>54 %</b><span>de los clics en WhatsApp, desde el celular</span></div>
+    <div class="kpi"><i class="fa-solid fa-phone" aria-hidden="true"></i><b>67 %</b><span>de los clics en teléfono, desde el celular</span></div>
+    <div class="kpi"><i class="fa-solid fa-moon" aria-hidden="true"></i><b>22 %</b><span>de los clics en WhatsApp (16) llegaron entre las 18:00 y las 7:59</span></div>
+    <div class="kpi"><i class="fa-solid fa-clock" aria-hidden="true"></i><b>10:30–15:34</b><span>horario en que llegaron todos los formularios</span></div>
+  </div>
+  <div class="sheet_foot"><span>Área de Producto · Actuaria Consultores</span><span><b>04</b> / 08</span></div>
+</section>
+
+<section class="sec" id="formularios">
+  <div class="sheet_head"><img src="https://cdn.prod.website-files.com/6967c96e0fba2ea4f94d3c69/6a70bbec17f7fc765c2ea5d9_logo-actuaria.svg" alt="Actuaria" width="120" height="25"><span>Contactos en actuaria.com · 27 de octubre de 2026</span></div>
+  <p class="eyebrow">05 · Formularios y Webflow</p><h2>GA4 midió 12 de 13 envíos</h2>
+  <p class="sec_intro">Webflow guarda cada formulario enviado. Comparar sus envíos con el evento de GA4, hora por hora, muestra qué tan fiel es la medición.</p>
+  <div class="tabla is-apilada"><table><thead><tr><th>Día</th><th>Envíos en Webflow</th><th>generate_lead en GA4</th><th>Lectura</th></tr></thead><tbody>
+    <tr><td>2 oct</td><td data-label="Envíos en Webflow">—</td><td data-label="generate_lead en GA4">10:00</td><td data-label="Lectura">Evento de prueba (no es un envío)</td></tr>
+    <tr><td>6 oct</td><td data-label="Envíos en Webflow">10:30 · 13:30</td><td data-label="generate_lead en GA4">10:00 · 13:00</td><td data-label="Lectura">Cuadra</td></tr>
+    <tr><td>7 oct</td><td data-label="Envíos en Webflow">12:56 · 14:01</td><td data-label="generate_lead en GA4">12:00 · 14:00</td><td data-label="Lectura">Cuadra</td></tr>
+    <tr><td>8 oct</td><td data-label="Envíos en Webflow">14:20</td><td data-label="generate_lead en GA4">14:00</td><td data-label="Lectura">Cuadra</td></tr>
+    <tr><td>13 oct</td><td data-label="Envíos en Webflow">12:11 · 15:33</td><td data-label="generate_lead en GA4">12:00 · 15:00</td><td data-label="Lectura">Cuadra</td></tr>
+    <tr class="is-hoy"><td>14 oct</td><td data-label="Envíos en Webflow">12:05</td><td data-label="generate_lead en GA4">7:00 · 12:00</td><td data-label="Lectura">+1: quien envió el 13 desde Contacto volvió a abrir la página de agradecimiento</td></tr>
+    <tr><td>19 oct</td><td data-label="Envíos en Webflow">15:34</td><td data-label="generate_lead en GA4">15:00</td><td data-label="Lectura">Cuadra</td></tr>
+    <tr class="is-hoy"><td>21 oct</td><td data-label="Envíos en Webflow">12:08 · 12:40 · 14:44</td><td data-label="generate_lead en GA4">12:00 · 14:00 · 14:00</td><td data-label="Lectura">Un envío del inicio de las 12 no llegó a GA4, y a las 14 hubo una vista de la página de agradecimiento sin página de origen</td></tr>
+    <tr><td>23 oct</td><td data-label="Envíos en Webflow">10:35</td><td data-label="generate_lead en GA4">10:00</td><td data-label="Lectura">Cuadra</td></tr>
+  </tbody></table></div>
+  <p class="chart_note">Webflow da la hora exacta; GA4, la hora redonda (10:00 es entre las 10:00 y las 10:59). Hora de Ecuador.</p>
+  <ul>
+    <li><strong>12 de 13 envíos (92 %) tienen su evento en GA4</strong> a la misma hora.</li>
+    <li><strong>Un envío no llegó a GA4</strong>: uno de los dos del inicio del 21 de octubre al mediodía. Lo más probable es que el visitante tuviera un bloqueador de anuncios o de seguimiento.</li>
+    <li><strong>Dos llegadas a la página de agradecimiento no fueron envíos.</strong> El 14 de octubre, alguien que había enviado el formulario el 13 desde Contacto volvió a abrir la página. El 21, a las 14:00, alguien llegó sin página de origen. Pudo ser una pestaña reabierta, un marcador o la dirección vieja de agradecimiento que redirige a la nueva (sección 06).</li>
+    <li>Del 2 al 25 de octubre <strong>no hubo envíos desde las páginas en inglés</strong>, y los 3 envíos de postulaciones no cuentan como contacto, como corresponde.</li>
+  </ul>
+  <div class="sheet_foot"><span>Área de Producto · Actuaria Consultores</span><span><b>05</b> / 08</span></div>
+</section>
+
+<section class="sec" id="riesgos">
+  <div class="sheet_head"><img src="https://cdn.prod.website-files.com/6967c96e0fba2ea4f94d3c69/6a70bbec17f7fc765c2ea5d9_logo-actuaria.svg" alt="Actuaria" width="120" height="25"><span>Contactos en actuaria.com · 27 de octubre de 2026</span></div>
+  <p class="eyebrow">06 · Riesgos de la medición</p><h2>Qué puede inflar o esconder contactos</h2>
+  <p class="sec_intro">Revisión de la configuración publicada, de las 620 páginas del sitio y de los datos. Las tres primeras son las que más importan.</p>
+  <ol class="rules">
+    <li><b class="n">1</b><div><strong>El botón «Compartir en WhatsApp» cuenta como contacto.</strong><p>Desde el 23 de octubre, los 556 artículos tienen una tarjeta «Comparte este artículo» con un enlace a WhatsApp. La regla de medición la cuenta como contacto, y Google Ads, como conversión si la visita vino de un anuncio. Hasta el 25 de octubre nadie lo usó. Hay que excluirlo antes de que distorsione las cifras.</p></div><span class="tag t-web">Equipo web</span></li>
+    <li><b class="n">2</b><div><strong>Una dirección vieja cuenta como formulario.</strong><p>Desde el 20 de octubre, la antigua página de agradecimiento <code>/gracias-pd</code> redirige a la actual (<code>/gracias</code>), así que cada visita a esa dirección suma un formulario en GA4 y en Google Ads. Pudo pasar una vez: la llegada sin origen del 21 de octubre.</p></div><span class="tag t-web">Equipo web</span></li>
+    <li><b class="n">3</b><div><strong>El GA4 de la agencia no ve estos contactos como conversiones.</strong><p>Según la configuración que Google publica para esa propiedad (G-0KW3C82GY3), los tres eventos llegan, pero no son eventos clave: su único evento clave es <code>purchase</code>. Sus informes de conversiones no muestran contactos.</p></div><span class="tag t-mkt">PMV</span></li>
+    <li><b class="n">4</b><div><strong>El formulario se mide por la página de agradecimiento, no por el envío.</strong><p>Recargar, reabrir la pestaña o entrar directo a esa página suma otro formulario. Pasó una vez en el periodo. Se puede contar solo cuando la visita viene de una página de actuaria.com, o medir el envío exitoso del formulario.</p></div><span class="tag t-web">Equipo web</span></li>
+    <li><b class="n">5</b><div><strong>Conversiones de Google Ads por revisar.</strong><p>La cuenta de conversiones tiene una cuarta conversión, que se dispara con el envío automático de formularios. Probablemente nunca se activa, porque Webflow envía sus formularios de otra forma, pero si se activara y fuera principal duplicaría los formularios. Además, GA4 avisa de una cuenta de Ads «PMV - Actuaria» sin vincular: si se vincula e importa los eventos clave, también duplicaría. La conversión por dirección del Estudio Actuarial no puede cumplirse hoy, porque exige la dirección con barra final.</p></div><span class="tag t-mkt">PMV</span></li>
+    <li><b class="n">6</b><div><strong>Contactos de pauta que aparecen como «directos».</strong><p>Si un anuncio todavía apunta a una dirección vieja, la redirección pierde sus etiquetas de campaña y la visita queda como directa. Parte de los 16 clics directos en WhatsApp y de los 6 en teléfono pueden ser pauta.</p></div><span class="tag t-mkt">Marketing y PMV</span></li>
+    <li><b class="n">7</b><div><strong>Tráfico interno.</strong><p>GA4 excluye la oficina solo desde el 21 de octubre, y no excluye a quien trabaja desde casa. Conviene confirmar que la regla siga marcando las visitas de la oficina y decidir qué hacer con las de casa.</p></div><span class="tag t-web">Equipo web y TI</span></li>
+    <li><b class="n">8</b><div><strong>Lo que no se mide.</strong><p>Los 1.248 enlaces de correo, los números escritos como texto en Contacto (quien los copia no deja rastro) y el formulario de Registro Actuacont, que no lleva a una página de agradecimiento.</p></div><span class="tag t-web">Equipo web</span></li>
+    <li><b class="n">9</b><div><strong>Botón flotante y pantallas medianas.</strong><p>El botón flotante abre WhatsApp en la misma pestaña, así que algunas conversiones de Ads pueden perderse al salir de la página. Y entre 480 y 991 px (tablets) no hay botón flotante ni barra de contacto: solo el pie.</p></div><span class="tag t-web">Equipo web</span></li>
+  </ol>
+  <div class="sheet_foot"><span>Área de Producto · Actuaria Consultores</span><span><b>06</b> / 08</span></div>
+</section>
+
+<section class="sec" id="pasos">
+  <div class="sheet_head"><img src="https://cdn.prod.website-files.com/6967c96e0fba2ea4f94d3c69/6a70bbec17f7fc765c2ea5d9_logo-actuaria.svg" alt="Actuaria" width="120" height="25"><span>Contactos en actuaria.com · 27 de octubre de 2026</span></div>
+  <p class="eyebrow">07 · Próximos pasos</p><h2>Qué sigue</h2>
+  <ol class="rules">
+    <li><b class="n">1</b><div><strong>Excluir «Compartir en WhatsApp» de la medición.</strong> Ajustar la regla en Tag Manager para que cuente solo los enlaces al número de Actuaria, publicar la versión y avisar a PMV, porque toca una conversión de Ads. Si interesa saber cuánto se comparten los artículos, el botón ya envía su propio evento («share»), que se puede medir aparte.</div><span class="tag t-web">Equipo web</span></li>
+    <li><b class="n">2</b><div><strong>Cambiar la redirección de /gracias-pd</strong> para que lleve a Contacto, y no redirigir otras páginas de agradecimiento viejas a la actual.</div><span class="tag t-web">Equipo web</span></li>
+    <li><b class="n">3</b><div><strong>Decidir cómo contar el formulario</strong>: solo con origen en actuaria.com, o por el envío exitoso.</div><span class="tag t-web">Equipo web con Marketing</span></li>
+    <li><b class="n">4</b><div><strong>Marcar los tres eventos como clave en el GA4 de la agencia</strong>, o tomar los contactos del GA4 de Actuaria, donde ya lo están. No crear de nuevo estos eventos: se contarían dos veces.</div><span class="tag t-mkt">PMV</span></li>
+    <li><b class="n">5</b><div><strong>Revisar las conversiones de Google Ads</strong>: cuáles son principales, la cuarta conversión de formularios, la vinculación pendiente y la conversión del Estudio Actuarial.</div><span class="tag t-mkt">PMV</span></li>
+    <li><b class="n">6</b><div><strong>Apuntar los anuncios a las direcciones nuevas</strong> y poner etiquetas de campaña (UTM) en los correos y en la pauta social.</div><span class="tag t-mkt">Marketing y PMV</span></li>
+    <li><b class="n">7</b><div><strong>Confirmar el filtro de la oficina</strong> y decidir cómo excluir a quien trabaja desde casa.</div><span class="tag t-web">Equipo web y TI</span></li>
+    <li><b class="n">8</b><div><strong>Repetir esta lectura con octubre completo</strong> a inicios de noviembre.</div><span class="tag t-web">Equipo web</span></li>
+  </ol>
+  <div class="sheet_foot"><span>Área de Producto · Actuaria Consultores</span><span><b>07</b> / 08</span></div>
+</section>
+
+<section class="sec" id="fuentes">
+  <div class="sheet_head"><img src="https://cdn.prod.website-files.com/6967c96e0fba2ea4f94d3c69/6a70bbec17f7fc765c2ea5d9_logo-actuaria.svg" alt="Actuaria" width="120" height="25"><span>Contactos en actuaria.com · 27 de octubre de 2026</span></div>
+  <p class="eyebrow">08 · Fuentes y método</p><h2>De dónde sale cada cifra</h2>
+  <ul>
+    <li><strong>Google Analytics 4</strong> (propiedad de Actuaria): informes de eventos del 2 al 25 de octubre, en hora de Ecuador, leídos el 26 y 27 de octubre, por día, hora, página, página de origen, fuente y medio, dispositivo y dirección del enlace.</li>
+    <li><strong>Eventos de prueba:</strong> el 2 de octubre se envió un evento de cada tipo, desde la página de inicio, para poder marcarlos como eventos clave. GA4 los incluye en sus totales; aquí se descuentan.</li>
+    <li><strong>Webflow:</strong> envíos guardados de cada formulario, leídos por su API en solo lectura y sin copiar datos personales. Son reales los que no son pruebas internas (correo de Actuaria o texto de prueba).</li>
+    <li><strong>Tag Manager y Google Ads:</strong> contenedor publicado de GTM-WVB8ND3W (versión 3) y configuración de las etiquetas de Google que sirve hoy cada cuenta. Solo se ve la versión publicada, no su historial.</li>
+    <li><strong>Sitio:</strong> el código de las 620 páginas del mapa del sitio, en español e inglés, revisado el 26 y 27 de octubre, y el de las páginas publicadas fuera de él (la de error y la del brandbook, entre otras), que tienen los mismos botones del pie. Las calculadoras que se muestran dentro de las páginas no tienen enlaces de contacto.</li>
+    <li>Cada frente lo revisó después un verificador independiente, y las cifras de este informe se recalcularon desde los datos crudos.</li>
+  </ul>
+  <div class="note is-info"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><p><strong>Ajuste a otros documentos.</strong> En «Estado de actuaria.com», la tabla de contactos incluye los eventos de prueba y una llegada repetida a la página de agradecimiento. Corregida, del 2 al 8 de octubre son 26 clics en WhatsApp, 4 en teléfono y 5 formularios (35, 5,0 por día), y del 9 al 18, 20, 5 y 3 (28, 2,8 por día). En el diagrama del Acta de Entrega, WhatsApp no pasa por la página de agradecimiento: se mide por el clic.</p></div>
+  <p>Las páginas de agradecimiento se nombran sin enlace a propósito: abrirlas contaría un formulario. El estado del sitio y los pendientes con responsable están en el <a href="https://renatopuente-ux.github.io/actuaria-web-entrega/" target="_blank" rel="noopener">Acta de Entrega</a>; el tráfico desde Google, en <a href="https://renatopuente-ux.github.io/actuaria-web-estado/" target="_blank" rel="noopener">Estado de actuaria.com</a>; y el análisis del lanzamiento, en la <a href="https://renatopuente-ux.github.io/actuaria-web-respuesta-analisis/" target="_blank" rel="noopener">respuesta del 20 de octubre</a>.</p>
+  <div class="sheet_foot"><span>Área de Producto · Actuaria Consultores</span><span><b>08</b> / 08</span></div>
+</section>
+
+</main></div>
+<footer class="pie">Área de Producto · Actuaria Consultores · actuaria.com</footer>
+<script>
+// Hover tooltip for the daily chart: one transparent hit area per day; the data travels in data-serie.
+document.querySelectorAll('[data-serie]').forEach(function (chart) {
+  var serie = JSON.parse(chart.getAttribute('data-serie'));
+  var caja = chart.querySelector('.chart_scroll'), tip = chart.querySelector('.tip'), marca = chart.querySelector('.marca');
+  function ocultar() { tip.classList.remove('is-on'); marca.setAttribute('width', 0); }
+  chart.querySelector('svg').addEventListener('pointermove', function (e) {
+    var hit = e.target.closest && e.target.closest('[data-i]');
+    if (!hit) { ocultar(); return; }
+    var x = serie[+hit.getAttribute('data-i')];
+    tip.innerHTML = '<b>' + x[0] + '</b>' + x[1] + ' acciones<br><span class="sw" style="background:#4c64d9"></span>WhatsApp: ' + x[2] + '<br><span class="sw" style="background:#151f47"></span>Teléfono: ' + x[3] + '<br><span class="sw" style="background:#df5e2d"></span>Formularios: ' + x[4];
+    ['x', 'y', 'width', 'height'].forEach(function (k) { marca.setAttribute(k, hit.getAttribute(k)); });
+    var a = hit.getBoundingClientRect(), b = caja.getBoundingClientRect();
+    var izq = a.left - b.left + caja.scrollLeft + a.width / 2;
+    tip.style.left = Math.max(90, Math.min(izq, caja.scrollWidth - 90)) + 'px';
+    tip.style.top = (a.top - b.top + 6) + 'px';
+    tip.classList.add('is-on');
+  });
+  chart.querySelector('svg').addEventListener('pointerleave', ocultar);
+});
+// Section index: copies the list into the mobile drop-down, closes it after a choice, highlights the section in view.
+(function () {
+  var desk = document.getElementById('toc-list'), mob = document.getElementById('toc-mobile-list');
+  if (desk && mob) {
+    mob.innerHTML = desk.innerHTML;
+    mob.addEventListener('click', function (e) {
+      if (e.target.closest('a')) mob.closest('details').removeAttribute('open');
+    });
+  }
+  var links = [].slice.call(document.querySelectorAll('.toc a'));
+  if (!('IntersectionObserver' in window) || !links.length) return;
+  var byId = {};
+  links.forEach(function (a) { byId[a.getAttribute('href').slice(1)] = a; });
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (!en.isIntersecting) return;
+      links.forEach(function (a) { a.classList.remove('is-active'); });
+      var a = byId[en.target.id];
+      if (a) a.classList.add('is-active');
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  Object.keys(byId).forEach(function (id) {
+    var s = document.getElementById(id);
+    if (s) io.observe(s);
+  });
+})();
+</script>
+</body></html>
